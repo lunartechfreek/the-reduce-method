@@ -64,6 +64,17 @@ let experienceByProffession = teamMembers.reduce((acc, curr) => {
     acc[key] += curr.yrsExperience;
   }
   return acc;
-}, {})
+}, {});
+
+let names = teamMembers.reduce((acc, curr) => {
+  let key = curr.profession;
+  if (!acc[key]) {
+    acc[key] = [curr.name];
+  } else {
+    acc[key].push(curr.name);
+  }
+  return acc;
+}, {});
 
 console.log(experienceByProffession);
+console.log(names);
